@@ -1,0 +1,59 @@
+Repuesta a la Actividad 5: Prueba de API con Express.js
+
+Se solicitó crear un servidor web utilizando Express.js que cumpliera con los siguientes requisitos:
+
+1. Configurar un servidor Node.js con el framework Express
+2. Crear una ruta HTTP POST en el endpoint "/registro"
+3. Recibir datos JSON con los campos nombre y mensaje
+4. Procesar los datos recibidos
+5. Devolver una respuesta JSON que confirme la recepción de los datos
+6. El servidor debe ejecutarse en el puerto 3000
+
+Desarrollo de la Actividad:
+
+Se creó un servidor Express (server.js) con la siguiente estructura:
+
+1. Inicialización y Configuración del Servidor. Se configura Express para manejar solicitudes JSON y se define la ruta POST para recibir los datos.
+
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+
+app.post('/registro', (req, res) => {
+    const nombre = req.body.nombre;
+    const mensaje = req.body.mensaje;
+
+    res.json({
+        estado: "Datos recibidos",
+        nombre: nombre,
+        mensaje: mensaje
+    });
+});
+La ruta extrae los datos del cuerpo de la solicitud y los devuelve en la respuesta.
+
+2. Inicio del Servidor
+app.listen(3000, () => {
+    console.log('Servidor ejecutándose en puerto 3000');
+});
+El servidor inicia en el puerto 3000 y muestra un mensaje de confirmación.
+
+Resultados de la Prueba:
+
+La solución fue probada exitosamente en Postman, enviando una solicitud POST a http://localhost:3000/registro con los siguientes datos:
+
+Datos Enviados (Request Body):
+
+{
+    "nombre": "Oneyver Rodriguez",
+    "mensaje": "Hola comunidad, Este es un mensaje de prueba, enviado por Oneyver Rodriguez Novo del Programa Programadores para la paz, probando el Servidor para la actividad de la Semana 6 - Modulo 3"
+}
+Respuesta Recibida:
+
+{
+    "estado": "Datos recibidos",
+    "nombre": "Oneyver Rodriguez",
+    "mensaje": "Hola comunidad, Este es un mensaje de prueba, enviado por Oneyver Rodriguez Novo del Programa Programadores para la paz, probando el Servidor para la actividad de la Semana 6 - Modulo 3"
+}
+
+El servidor Express funciona correctamente, recibe datos JSON en la ruta especificada, procesa la información y devuelve la respuesta esperada.
