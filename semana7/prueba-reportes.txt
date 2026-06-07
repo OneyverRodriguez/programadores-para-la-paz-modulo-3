@@ -1,0 +1,28 @@
+Respuesta de la actividad 7 (Probar el registro de datos en el servidor): Probar el registro de datos
+
+En esta actividad se validó el endpoint POST /reportes del servidor en semana7/server.js, cuyo objetivo es registrar un nuevo reporte en el sistema.
+Para la prueba se envió una solicitud con datos en formato JSON, incluyendo los campos tipo y descripcion.
+
+Ejemplo de cuerpo enviado:
+
+{
+    "mensaje": "Reporte registrado",
+    "reporte": {
+        "id": 1,
+        "tipo": "Medio Ambiente",
+        "descripcion": "Acumulación prolongada de escombros y residuos sólidos en la ronda del río. Esta situación no solo contamina la fuente hídrica, sino que está afectando directamente el desarrollo de los talleres de educación ambiental y la participación de los jóvenes."
+    }
+}
+
+Como resultado, el servidor respondió correctamente confirmando el registro del reporte y retornando el objeto creado con su identificador:
+
+{
+    "mensaje": "Reporte registrado",
+    "reporte": {
+        "id": 1,
+        "tipo": "Medio Ambiente",
+        "descripcion": "Acumulación prolongada de escombros y residuos sólidos en la ronda del río. Esta situación no solo contamina la fuente hídrica, sino que está afectando directamente el desarrollo de los talleres de educación ambiental y la participación de los jóvenes."
+    }
+}
+
+Con esta evidencia, se concluye que el método POST funciona de manera adecuada: recibe datos JSON, crea el nuevo reporte y devuelve una respuesta de confirmación con la información almacenada.

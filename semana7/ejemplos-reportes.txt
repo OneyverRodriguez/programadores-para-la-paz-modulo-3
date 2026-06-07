@@ -1,0 +1,25 @@
+Respuesta de la activida 8:  (método GET) Agregar un segundo reporte
+
+En esta actividad se validó el endpoint GET /reportes del servidor, cuyo propósito es consultar todos los reportes almacenados en memoria.
+Este método no crea nuevos datos, sino que devuelve la lista completa de reportes registrados hasta ese momento.
+Cuando se realiza la solicitud GET, el servidor responde con un arreglo JSON que contiene cada reporte guardado, incluyendo sus campos id, tipo y descripcion.
+Por ejemplo, una respuesta obtenida fue la siguiente:
+
+[
+    {
+        "id": 1,
+        "tipo": "Medio Ambiente",
+        "descripcion": "Acumulación prolongada de escombros y residuos sólidos en la ronda del río. Esta situación no solo contamina la fuente hídrica, sino que está afectando directamente el desarrollo de los talleres de educación ambiental y la participación de los jóvenes."
+    },
+    {
+        "id": 2,
+        "tipo": "Espacio Público",
+        "descripcion": "Las luminarias del parque principal llevan tres semanas fundidas y las rutas de acceso están sin mantenimiento. Esto impide que el espacio se pueda habitar de noche y afecta nuestra capacidad HOY para garantizar un entorno seguro para todos"
+    },
+    {
+        "id": 3,
+        "tipo": "Cultura y Territorio",
+        "descripcion": "Intervención no autorizada con maquinaria pesada cerca de la zona de reserva, lo cual está destruyendo los senderos de memoria biocultural y poniendo en riesgo las iniciativas de turismo comunitario."
+    }
+]
+Con esta prueba se confirma que el método GET funciona correctamente, ya que permite visualizar los reportes almacenados en el servidor y verificar que los datos se están devolviendo en formato JSON de manera adecuada.
